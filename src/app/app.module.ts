@@ -8,10 +8,10 @@ import { AppComponent } from './app.component';
 
 // Must export the config
 export const firebaseConfig = {
-  apiKey: '',
-  authDomain: '',
-  databaseURL: '',
-  storageBucket: ''
+  apiKey: 'AIzaSyDEqeUnxamLeafe8-lrjmwGCcRbMcaVftU',
+  authDomain: 'microrol-ff0bd.firebaseapp.com',
+  databaseURL: 'https://microrol-ff0bd.firebaseio.com/',
+  storageBucket: '<your-storage-bucket>'
 };
 
 const myFirebaseAuthConfig = {
