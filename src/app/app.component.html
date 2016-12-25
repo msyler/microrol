@@ -1,17 +1,5 @@
-<div> {{ (af.auth | async)?.uid }} </div>
-<button (click)="login()">Login</button>
-<button (click)="logout()">Logout</button>
-<div class="row">
-	<div class="col-md-4">
-		xxx
-	</div>
-	<div class="col-md-4">
-		xxx
-	</div>
-	<div class="col-md-4">
-		xxx
-	</div>
-</div>
+<app-header></app-header>
+
 <ul>
   <li class="text" *ngFor="let item of items | async">
     {{JSON.stringify(item)}}

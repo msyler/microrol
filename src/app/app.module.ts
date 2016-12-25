@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -16,18 +17,19 @@ export const firebaseConfig = {
 
 const myFirebaseAuthConfig = {
   provider: AuthProviders.Google,
-  method: AuthMethods.Redirect
+  method: AuthMethods.Popup
 };
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
+    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]

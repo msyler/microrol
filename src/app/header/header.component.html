@@ -1,0 +1,13 @@
+<div class="app-header-style">
+
+	<div class="pull-left"> {{ (af.auth | async)?.uid }} </div>
+
+	<li *ngFor="let item of items | async">
+       {{ item | json }}
+    </li>
+
+	<div class="float-md-right">
+		<button class="btn" *ngIf="!isLogged" (click)="login()">Login</button>
+		<button class="btn" *ngIf="isLogged" (click)="logout()">Logout</button>
+	</div>
+</div>
