@@ -1,0 +1,14 @@
+<div class="chat-window">
+	<!--li *ngFor="let item of items | async">
+	   {{ item | json }}
+	</li-->
+	<div *ngFor="let item of items | async">
+		<div>{{ item.sender }} {{ item.date }}</div>
+		<div>{{ item.text }}</div>
+	</div>
+
+	<div class="form-inline">
+		<input class="form-control" [(ngModel)]="message" type="text">
+		<button class="btn" (click)="onSendMessage()">Send</button>
+	</div>
+</div>

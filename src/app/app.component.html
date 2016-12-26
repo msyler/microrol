@@ -1,7 +1,2 @@
-<app-header></app-header>
-
-<ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{JSON.stringify(item)}}
-  </li>
-</ul>
+<app-header (onLogged)="onLogged($event)"></app-header>
+<chat></chat>
