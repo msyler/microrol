@@ -6,13 +6,13 @@ import { AuthService } from '../auth/auth.service';
     selector: 'chat',
     templateUrl: './chat.component.html',
     styleUrls: ['app/chat/chat.component.css'],
-    providers: [AuthService]
+    providers: [AuthService, AuthService]
 })
 
 export class ChatComponent {
     items: FirebaseListObservable<any[]>;
     message: string;
-    constructor(public af: AngularFire) {
+    constructor(public af: AngularFire, private authService: AuthService) {
         this.items = af.database.list('/channels/channel1/messages/',  {
           query: {
             orderByKey: false
@@ -21,7 +21,9 @@ export class ChatComponent {
 
     onSendMessage(){
         this.items.push({
-            text: this.message
+            text: this.message,
+            sender: this.authService.getUser().auth.displayName
         });
+        this.message = '';
     }
 }
