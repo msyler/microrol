@@ -3,7 +3,7 @@
 	   {{ item | json }}
 	</li-->
 	<div *ngFor="let item of items | async">
-		<div>{{ item.sender }} {{ item.date }}</div>
+		<div>{{ item.sender }} - {{ item.date }}</div>
 		<div>{{ item.text }}</div>
 	</div>
 

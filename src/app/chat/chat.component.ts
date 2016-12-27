@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { AuthService } from '../auth/auth.service';
+import * as moment from 'moment/moment';
 
 @Component({
     selector: 'chat',
@@ -22,7 +23,8 @@ export class ChatComponent {
     onSendMessage(){
         this.items.push({
             text: this.message,
-            sender: this.authService.getUser().auth.displayName
+            sender: this.authService.getUser().auth.displayName,
+            date: moment().format('DD/MM/YYYY HH:mm:ss')
         });
         this.message = '';
     }
